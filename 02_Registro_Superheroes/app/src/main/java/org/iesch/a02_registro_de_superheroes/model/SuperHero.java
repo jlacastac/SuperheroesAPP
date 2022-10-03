@@ -8,9 +8,9 @@ public class SuperHero implements Parcelable {
     private String name;
     private String alterEgo;
     private String bio;
-    private float power;
+    private int power;
 
-    public SuperHero(String name, String alterEgo, String bio, float power) {
+    public SuperHero(String name, String alterEgo, String bio, int power) {
         this.name = name;
         this.alterEgo = alterEgo;
         this.bio = bio;
@@ -21,7 +21,7 @@ public class SuperHero implements Parcelable {
         name = in.readString();
         alterEgo = in.readString();
         bio = in.readString();
-        power = in.readFloat();
+        power = in.readInt();
     }
 
     public static final Creator<SuperHero> CREATOR = new Creator<SuperHero>() {
@@ -48,7 +48,7 @@ public class SuperHero implements Parcelable {
         return bio;
     }
 
-    public float getPower() {
+    public int getPower() {
         return power;
     }
 
